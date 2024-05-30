@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "author": "Кто-то",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -76.8, "left": 72.04, "attrs": {} },
+    { "type": "chip-co2-chip", "id": "chip1", "top": -114.18, "left": 206.4, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -191.7, "left": 13.8, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "oled2",
+      "top": 108.74,
+      "left": -47.77,
+      "attrs": { "i2cAddress": "0x3c" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "chip1:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "dht1:SDA", "esp:15", "green", [ "v0" ] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "chip1:VCC", "esp:3V3", "red", [ "h0" ] ],
+    [ "esp:5", "esp:17", "green", [ "h0" ] ],
+    [ "oled2:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "oled2:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "oled2:SCL", "esp:22", "green", [ "v0" ] ],
+    [ "oled2:SDA", "esp:21", "green", [ "v0" ] ],
+    [ "chip1:TX", "esp:17", "green", [ "h0" ] ],
+    [ "chip1:RX", "esp:16", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}

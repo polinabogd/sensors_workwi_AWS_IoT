@@ -1,0 +1,22 @@
+{
+  "name": "MH-Z19 Co2 Sensor",
+  "author": "anon",
+  "pins": [
+    "GND",
+    "VCC",
+    "TX",
+    "RX",
+    "",
+    "",
+    ""
+  ],
+  "controls": [
+    {
+      "id": "tdsValue",
+      "label": "Co2 Value",
+      "type": "slider",
+      "min":400,
+      "max":5000
+    }
+  ]
+}
